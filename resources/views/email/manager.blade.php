@@ -1,0 +1,1 @@
+{!! mail_template($content->template_name, $content->id) !!}
