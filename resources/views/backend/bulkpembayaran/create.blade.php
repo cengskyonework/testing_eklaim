@@ -7,6 +7,16 @@
         margin-top: 10px;
     }
 </style>
+<script>
+    function disableAllKeys(event) {
+        event.preventDefault(); // Mencegah perilaku default dari tombol apa pun
+        // (Anda bisa menambahkan logika lain di sini jika diperlukan)
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("keydown", disableAllKeys);
+    });
+</script>
 
 @section('content')
     <div class="row">
@@ -99,7 +109,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for=""> Tanggal Pembayaran</label>
-                                    <input type="date" class="form-control" name="pay_date">
+                                    <input type="date" class="form-control" name="pay_date"
+                                        onkeydown="disableAllKeys(event)">
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Status </label>
@@ -245,5 +256,14 @@
 
 
         }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var birthdateInput = document.getElementById("pay_date");
+
+            birthdateInput.addEventListener("click", function(event) {
+                event.preventDefault();
+                return false;
+            });
+        });
     </script>
 @endsection

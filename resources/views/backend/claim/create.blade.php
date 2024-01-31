@@ -13,8 +13,8 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title panel-title">{{ _lang('Form Klaim PT. NIRAMAS UTAMA') }}</h4>
-                    <form method="post" class="validate" autocomplete="off" action="{{ url('claim') }}"
-                        enctype="multipart/form-data" id="my_form">
+                    <form method="post" onkeydown="handleEnter(event)" class="validate" autocomplete="off"
+                        action="{{ url('claim') }}" enctype="multipart/form-data" id="my_form">
                         {{ csrf_field() }}
                         <div class="row">
                             <div class="col-md-6">
@@ -509,6 +509,13 @@
             var formattedSum = sum.toFixed(2);
             $(".total").val(formattedSum);
         });
+
+        function handleEnter(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault(); // Mencegah pengiriman formulir
+                // (Anda bisa menambahkan logika lain di sini jika diperlukan)
+            }
+        }
 
         // document.getElementById("my_form").addEventListener("button", function() {
         //     if (confirm("Anda yakin?")) {

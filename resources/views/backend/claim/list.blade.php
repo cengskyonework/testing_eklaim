@@ -45,7 +45,7 @@
                             </div>
                         </div>
 
-                        <div class="table-responsive table-container data-table">
+                        <div class="table-responsive table-container">
                             <table class="table table-bordered" data-page-length='-1' id="tabless">
                                 <thead>
                                     <tr>

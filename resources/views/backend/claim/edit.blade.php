@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title panel-title">{{ _lang('Update Data Klaim') }}</h4>
-                    <form method="post" class="validate" autocomplete="off"
+                    <form method="post" onkeydown="handleEnter(event)" class="validate" autocomplete="off"
                         action="{{ action('ClaimController@update', $id) }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         {{ method_field('PUT') }}
@@ -504,5 +504,12 @@
             var formattedSum = sum.toFixed(2);
             $(".total").val(formattedSum);
         });
+
+        function handleEnter(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault(); // Mencegah pengiriman formulir
+                // (Anda bisa menambahkan logika lain di sini jika diperlukan)
+            }
+        }
     </script>
 @endsection
