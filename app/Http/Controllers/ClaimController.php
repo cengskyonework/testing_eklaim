@@ -66,8 +66,8 @@ class ClaimController extends Controller
 			}
 		} else {
 			$app = ClaimApproval::all();
-			// $claim = Claim::latest('id')->select('id', 'surat_jalan', 'nomor', 'distributor_id', 'category_id', 'promo_idx', 'promo_id', 'region_id', 'cost_id', 'status', 'created_at', 'no_ap', 'internal_pend', 'nominal', 'ppn', 'pph', 'dpp')->get();
-			$claim = Claim::latest('id')->select('id', 'surat_jalan', 'nomor', 'distributor_id', 'category_id', 'promo_idx', 'promo_id', 'region_id', 'cost_id', 'status', 'created_at', 'no_ap', 'internal_pend', 'nominal', 'ppn', 'pph', 'dpp')->paginate(100);
+			$claim = Claim::latest('id')->select('id', 'surat_jalan', 'nomor', 'distributor_id', 'category_id', 'promo_idx', 'promo_id', 'region_id', 'cost_id', 'status', 'created_at', 'no_ap', 'internal_pend', 'nominal', 'ppn', 'pph', 'dpp')->get();
+			// $claim = Claim::latest('id')->select('id', 'surat_jalan', 'nomor', 'distributor_id', 'category_id', 'promo_idx', 'promo_id', 'region_id', 'cost_id', 'status', 'created_at', 'no_ap', 'internal_pend', 'nominal', 'ppn', 'pph', 'dpp')->paginate(100);
 		}
 		return view('backend.claim.list', compact('claim', 'app'));
 	}
